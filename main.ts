@@ -234,6 +234,11 @@ export default class TextFormat extends Plugin {
         editor.replaceSelection(text);
       },
     });
+    this.addCommand({
+                id: "text-format-typographic-quotes",
+                name: "Typographic quotes",
+                callback: () => this.textFormat("quotify"),
+    });
   }
 
   extraDoubleSpaces(): void {
@@ -331,6 +336,16 @@ export default class TextFormat extends Plugin {
 
     // modify selection text
     switch (cmd) {
+      case "quotify":
+        // replacedText = selectedText.replace(/["|«|»](.+?)["|«|»)]/g, "„$1”").replace(/['|›|‹](.+?)['|‹|›]/g, "‚$1’");
+        replacedText = selectedText.replace(/\s"|\s“|\s»|\s«/g, " „").replace(/"\s|»\s|«\s/g, "“ ") //double quotes
+        replacedText = replacedText.replace(/("|“|»|«)([A-Z])/g, "„$2"); //beginning of line: "A etc.
+        replacedText = replacedText.replace(/([.,;])("|»|«)/g, "$1“"); //interpunctions: ." | ," etc.
+        replacedText = replacedText.replace(/("|»|«)([.,;:])/g, "“$2"); // "; | ", etc.
+        replacedText = replacedText.replace(/\("|\(“/g, "(„").replace(/"\)|„\)/g, "“)"); // (" | ")
+        replacedText = replacedText.replace(/\s'|\s’|\s›|\s‹/g, " ‚").replace(/'\s|›\s|‹\s/g, "’ ") //single quotes
+        replacedText = replacedText.replace(/(\w)'(\w)/g, "$1’$2"); //apostroph
+        break;
       case "anki":
         replacedText = ankiSelection(selectedText);
         break;
