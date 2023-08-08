@@ -67,6 +67,11 @@ export default class TextFormat extends Plugin {
     });
 
     this.addCommand({
+                id: "text-format-remove-duplicate-vocabs",
+                name: "Remove duplicate vocabs",
+                callback: () => this.textFormat("remove-duplicate-vocabs"),
+            });
+    this.addCommand({
       id: "text-format-anki-card",
       name: "Convert selection into Anki card format",
       callback: () => this.textFormat("anki"),
@@ -336,6 +341,15 @@ export default class TextFormat extends Plugin {
 
     // modify selection text
     switch (cmd) {
+      case "remove-duplicate-vocabs":
+          replacedText = "";
+          var modifiedText = selectedText.replace(/\s*\n\s*\n/g, "\n"); // Leerzeilen löschen
+          modifiedText = modifiedText.replace(/\s*\n</g, "<"); // unerwünschte linebreaks zwischen Vokabel und HTML-Tag löschen
+          modifiedText = modifiedText.replace(/(<!.*-->)(\n*|\r*|\s*)(<!.*-->)/g, "$1"); // doppelte Tags entfernen
+          modifiedText = Array.from(new Set(modifiedText.split('\n'))); // duplicates entfernen
+          modifiedText.forEach(function (item, index) {
+              replacedText += item + '\n';});
+          break;
       case "quotify":
         // replacedText = selectedText.replace(/["|«|»](.+?)["|«|»)]/g, "„$1”").replace(/['|›|‹](.+?)['|‹|›]/g, "‚$1’");
         replacedText = selectedText.replace(/\s"|\s“|\s»|\s«/g, " „").replace(/"\s|»\s|«\s/g, "“ ") //double quotes
