@@ -67,35 +67,35 @@ export default class TextFormat extends Plugin {
     });
 
     this.addCommand({
-                id: "text-format-remove-duplicate-vocabs",
-                name: "Remove duplicate vocabs",
-                callback: () => this.textFormat("remove-duplicate-vocabs"),
-            });
-    this.addCommand({
-      id: "text-format-anki-card",
-      name: "Convert selection into Anki card format",
-      callback: () => this.textFormat("anki"),
+      id: "text-format-remove-duplicate-vocabs",
+      name: "Remove duplicate vocabs",
+      callback: () => this.textFormat("remove-duplicate-vocabs"),
     });
-    this.addCommand({
-      id: "text-format-ligature",
-      name: "Replace ligature",
-      callback: () => this.textFormat("ligature"),
-    });
-    this.addCommand({
-      id: "text-format-remove-wiki-link",
-      name: "Remove WikiLinks format in selection",
-      callback: () => this.textFormat("remove-wiki-link"),
-    });
-    this.addCommand({
-      id: "text-format-remove-url-link",
-      name: "Remove URL links format in selection",
-      callback: () => this.textFormat("remove-url-link"),
-    });
-    this.addCommand({
-      id: "text-format-link-url2wiki",
-      name: "Convert URL links to WikiLinks in selection",
-      callback: () => this.textFormat("link-url2wiki"),
-    });
+    // this.addCommand({
+    //   id: "text-format-anki-card",
+    //   name: "Convert selection into Anki card format",
+    //   callback: () => this.textFormat("anki"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-ligature",
+    //   name: "Replace ligature",
+    //   callback: () => this.textFormat("ligature"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-remove-wiki-link",
+    //   name: "Remove WikiLinks format in selection",
+    //   callback: () => this.textFormat("remove-wiki-link"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-remove-url-link",
+    //   name: "Remove URL links format in selection",
+    //   callback: () => this.textFormat("remove-url-link"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-link-url2wiki",
+    //   name: "Convert URL links to WikiLinks in selection",
+    //   callback: () => this.textFormat("link-url2wiki"),
+    // });
     this.addCommand({
       id: "text-format-lower",
       name: "Lowercase selected text",
@@ -111,16 +111,16 @@ export default class TextFormat extends Plugin {
       name: "Togglecase selected text",
       callback: () => this.textFormat("togglecase"),
     });
-    this.addCommand({
-      id: "text-format-capitalize-word",
-      name: "Capitalize all words in selected text",
-      callback: () => this.textFormat("capitalize-word"),
-    });
-    this.addCommand({
-      id: "text-format-capitalize-sentence",
-      name: "Capitalize only first word of sentence in selected text",
-      callback: () => this.textFormat("capitalize-sentence"),
-    });
+    // this.addCommand({
+    //   id: "text-format-capitalize-word",
+    //   name: "Capitalize all words in selected text",
+    //   callback: () => this.textFormat("capitalize-word"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-capitalize-sentence",
+    //   name: "Capitalize only first word of sentence in selected text",
+    //   callback: () => this.textFormat("capitalize-sentence"),
+    // });
     this.addCommand({
       id: "text-format-titlecase",
       name: "Title case selected text",
@@ -156,93 +156,98 @@ export default class TextFormat extends Plugin {
       name: "Format ordered list",
       callback: () => this.textFormat("convert-ordered"),
     });
-    this.addCommand({
-      id: "text-format-split-blank",
-      name: "Split line(s) by blanks",
-      callback: () => this.textFormat("split-blank"),
-    });
-    this.addCommand({
-      id: "text-format-chinese-character",
-      name: "Convert to Chinese character (,;:!?)",
-      callback: () => this.textFormat("Chinese"),
-    });
-    this.addCommand({
-      id: "text-format-latex-single-letter",
-      name: "Convert single letter into math mode (latex)",
-      callback: () => this.textFormat("latex-letter"),
-    });
+    // this.addCommand({
+    //   id: "text-format-split-blank",
+    //   name: "Split line(s) by blanks",
+    //   callback: () => this.textFormat("split-blank"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-chinese-character",
+    //   name: "Convert to Chinese character (,;:!?)",
+    //   callback: () => this.textFormat("Chinese"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-latex-single-letter",
+    //   name: "Convert single letter into math mode (latex)",
+    //   callback: () => this.textFormat("latex-letter"),
+    // });
     this.addCommand({
       id: "text-format-decodeURI",
       name: "Decode URL",
       callback: () => this.textFormat("decodeURI"),
     });
-    this.addCommand({
-      id: "text-format-paragraph-double-spaces",
-      name: "Add extra double spaces per paragraph for whole file",
-      callback: () => this.extraDoubleSpaces(),
-    });
-    this.addCommand({
-      id: "text-format-add-line-break",
-      name: "Add extra line break to paragraph",
-      callback: () => this.textFormat("add-line-break"),
-    });
+    // this.addCommand({
+    //   id: "text-format-paragraph-double-spaces",
+    //   name: "Add extra double spaces per paragraph for whole file",
+    //   callback: () => this.extraDoubleSpaces(),
+    // });
+    // this.addCommand({
+    //   id: "text-format-add-line-break",
+    //   name: "Add extra line break to paragraph",
+    //   callback: () => this.textFormat("add-line-break"),
+    // });
     this.addCommand({
       id: "text-format-hyphen",
       name: "Remove hyphens",
       callback: () => this.textFormat("hyphen"),
     });
+    // this.addCommand({
+    //   id: "text-format-remove-citation-index",
+    //   name: "Remove citation index",
+    //   callback: () => this.textFormat("remove-citation"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-mathpix-array2table",
+    //   name: "Convert Mathpix array to markdown table",
+    //   callback: () => this.textFormat("array2table"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-table2bullet",
+    //   name: "Convert table to bullet list",
+    //   callback: () => this.textFormat("table2bullet"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-table2bullet-head",
+    //   name: "Convert table to bullet list with header",
+    //   callback: () => this.textFormat("table2bullet-header"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-todo-sort",
+    //   name: "Sort to-do list",
+    //   callback: () => this.textFormat("todo-sort"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-api-request",
+    //   name: "Format with API",
+    //   callback: () => this.textFormat("api-request"),
+    // });
+    // this.addCommand({
+    //   id: "text-format-zotero-note",
+    //   name: "Zotero note format and paste",
+    //   callback: async () => {
+    //     const clipboardText = await navigator.clipboard.readText();
+    //     let text = zoteroNote(
+    //       clipboardText,
+    //       this.settings.ZoteroNoteRegExp,
+    //       this.settings.ZoteroNoteTemplate
+    //     );
+    //     let markdownView = this.app.workspace.getActiveViewOfType(MarkdownView);
+    //     if (!markdownView) {
+    //       return;
+    //     }
+    //     let editor = markdownView.editor;
+    //     editor.replaceSelection(text);
+    //   },
+    // });
     this.addCommand({
-      id: "text-format-remove-citation-index",
-      name: "Remove citation index",
-      callback: () => this.textFormat("remove-citation"),
+      id: "text-format-typographic-quotes",
+      name: "Typographic quotes",
+      callback: () => this.textFormat("quotify"),
     });
     this.addCommand({
-      id: "text-format-mathpix-array2table",
-      name: "Convert Mathpix array to markdown table",
-      callback: () => this.textFormat("array2table"),
-    });
-    this.addCommand({
-      id: "text-format-table2bullet",
-      name: "Convert table to bullet list",
-      callback: () => this.textFormat("table2bullet"),
-    });
-    this.addCommand({
-      id: "text-format-table2bullet-head",
-      name: "Convert table to bullet list with header",
-      callback: () => this.textFormat("table2bullet-header"),
-    });
-    this.addCommand({
-      id: "text-format-todo-sort",
-      name: "Sort to-do list",
-      callback: () => this.textFormat("todo-sort"),
-    });
-    this.addCommand({
-      id: "text-format-api-request",
-      name: "Format with API",
-      callback: () => this.textFormat("api-request"),
-    });
-    this.addCommand({
-      id: "text-format-zotero-note",
-      name: "Zotero note format and paste",
-      callback: async () => {
-        const clipboardText = await navigator.clipboard.readText();
-        let text = zoteroNote(
-          clipboardText,
-          this.settings.ZoteroNoteRegExp,
-          this.settings.ZoteroNoteTemplate
-        );
-        let markdownView = this.app.workspace.getActiveViewOfType(MarkdownView);
-        if (!markdownView) {
-          return;
-        }
-        let editor = markdownView.editor;
-        editor.replaceSelection(text);
-      },
-    });
-    this.addCommand({
-                id: "text-format-typographic-quotes",
-                name: "Typographic quotes",
-                callback: () => this.textFormat("quotify"),
+      id: "replace-spans",
+      name: "Replace <span> tags with highlight",
+      callback: () => this.textFormat("replace-spans"),
     });
   }
 
@@ -335,6 +340,9 @@ export default class TextFormat extends Plugin {
           selectedText = editor.getSelection();
         }
         break;
+      case "replace-spans":
+          replacedText = selectedText.replace(/<span[^>]*>(.*?)<\/span>/g, '==$1==');
+          break;
       default:
         break;
     }
