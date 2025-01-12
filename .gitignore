@@ -18,6 +18,7 @@ main.js
 # obsidian
 data.json
 
+<<<<<<< HEAD
 # Exclude macOS Finder (System Explorer) View States
 .DS_Store
 
@@ -75,3 +76,9 @@ crowdin-cli.jar
 
 # We don't want these temp files
 packages/jest-worker/src/workers/__tests__/__temp__
+=======
+*.sh
+*.json
+!manifest.json
+!manifest-beta.json
+>>>>>>> upstream/master
